@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "fir-notifications-2024",
+    "staging": "fir-notifications-2024"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}
