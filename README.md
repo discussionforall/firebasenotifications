@@ -2,9 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-##credentials
-> test@gmail.com
-> Sparkle1#
+## Credentials
+> email: test@gmail.com
+> passcode: Sparkle1#
 
 ## Available Scripts
 
