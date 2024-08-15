@@ -1,15 +1,22 @@
 import { useState, useEffect } from "react";
-import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import { getAuth, onAuthStateChanged, signOut, User } from "firebase/auth";
 
-export const useAuth = () => {
-  const [user, setUser] = useState<any>(null);
+// Define a type for the hook return value
+interface UseAuthResult {
+  user: User | null;
+  logout: () => Promise<void>;
+}
+
+export const useAuth = (): UseAuthResult => {
+  const [user, setUser] = useState<User | null>(null);
   const auth = getAuth(); // Initialize Firebase Authentication
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => { // Listen for authentication state changes
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
 
+    // Clean up subscription on component unmount
     return () => unsubscribe();
   }, [auth]);
 
@@ -18,6 +25,7 @@ export const useAuth = () => {
       await signOut(auth);
     } catch (error) {
       console.error("Failed to log out:", error);
+      // Optionally, handle the error or display a notification
     }
   };
 

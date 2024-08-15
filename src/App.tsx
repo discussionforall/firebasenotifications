@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Components/Login";
-import Notifications from "./Notifications";
+import Notifications from "./Components/Notifications";
 import Logout from "./Components/Logout";
 import Navbar from "./Components/Navbar";
 

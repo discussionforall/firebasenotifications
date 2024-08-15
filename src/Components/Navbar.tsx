@@ -10,22 +10,22 @@ const Navbar: React.FC = () => {
     <AppBar position="static">
       <Toolbar>
         <Container sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Box>
-          <Button color="inherit" component={Link} to="/">
-            Notifications
-          </Button>
-        </Box>
-          {user ? (
-            <>
+          <Typography variant="h6">
+            <Button color="inherit" component={Link} to="/">
+              Notifications
+            </Button>
+          </Typography>
+          <Box>
+            {user ? (
               <Button color="inherit" onClick={logout}>
                 Logout
               </Button>
-            </>
-          ) : (
-            <Button color="inherit" component={Link} to="/login">
-              Login
-            </Button>
-          )}
+            ) : (
+              <Button color="inherit" component={Link} to="/login">
+                Login
+              </Button>
+            )}
+          </Box>
         </Container>
       </Toolbar>
     </AppBar>
